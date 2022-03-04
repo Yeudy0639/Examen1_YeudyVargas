@@ -17,11 +17,11 @@ namespace WBL
         Task<DBEntity> Update(ParametrosEntity entity);
     }
 
-    public class TitulosService : IParametrosService
+    public class ParametrosService : IParametrosService
     {
         private readonly IDataAccess sql;
 
-        public TitulosService(IDataAccess _sql)
+        public ParametrosService(IDataAccess _sql)
         {
             sql = _sql;
         }
@@ -31,7 +31,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryAsync<ParametrosEntity>("ListarParametros");
+                var result = sql.QueryAsync<ParametrosEntity>("listar_Parametros");
 
                 return await result;
             }
@@ -50,7 +50,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryFirstAsync<ParametrosEntity>("VerDetalleParametros", new
+                var result = sql.QueryFirstAsync<ParametrosEntity>("detalles_Parametros", new
                 {
 
                     entity.Id_Parametro
@@ -74,7 +74,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.ExecuteAsync("InsertarParametros", new
+                var result = sql.ExecuteAsync("insertar_Parametros", new
                 {
 
                     entity.Descripcion,
@@ -98,7 +98,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.ExecuteAsync("EditarParametros", new
+                var result = sql.ExecuteAsync("editar_Parametros", new
                 {
                     entity.Id_Parametro,
                     entity.Codigo,
@@ -124,7 +124,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.ExecuteAsync("EliminarParametros", new
+                var result = sql.ExecuteAsync("eliminar_Parametros", new
                 {
                     entity.Id_Parametro,
 

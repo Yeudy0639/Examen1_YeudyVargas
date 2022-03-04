@@ -68,6 +68,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BD\BD.csproj" />
     <ProjectReference Include="..\Entity\Entity.csproj" />
+    <ProjectReference Include="..\WBL\WBL.csproj" />
   </ItemGroup>
 
   <ItemGroup>
